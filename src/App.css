@@ -26,12 +26,9 @@
 body {
   background-color: #43386E;
   font-family: Montserrat, sans-serif;
-
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
   flex-direction: column;
-
   min-height: 100vh;
   margin: 0;
 }
@@ -58,10 +55,7 @@ p {
 }
 
 .inline-h6 {
-  /*display: block;*/
   font-size: .67em;
-  /*margin-top: 2.33em;*/
-  /*margin-bottom: 2.33em;*/
   font-weight: bold;
   margin: 5px 0;
   text-transform: uppercase;
@@ -110,21 +104,6 @@ p {
   align-self: center;
   font-size: 14px;
 }
-
-/*.skills ul {*/
-/*  list-style-type: none;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
-
-/*.skills ul li {*/
-/*  border: 1px solid #2D2747;*/
-/*  border-radius: 2px;*/
-/*  display: inline-block;*/
-/*  font-size: 12px;*/
-/*  margin: 0 7px 7px 0;*/
-/*  padding: 7px;*/
-/*}*/
 
 .custom-select {
   display: flex;

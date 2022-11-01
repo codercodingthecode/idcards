@@ -1,5 +1,6 @@
 import React from "react";
 import {IDCard} from "../Utils/Api";
+import {InlineInputEdit} from "react-inline-input-edit";
 
 export const Card = ({
     name: {first, last},
@@ -12,40 +13,75 @@ export const Card = ({
     updateCard}: IDCard & {
     updateCard: (uuid: string, key: string, value: string) => void;
 }) => {
-    // const [firstName, setFirstName] = React.useState(first);
     return (
         <div className="card-container">
             <img className="round" src={medium} alt="user"/>
-            <h3>{`${first} ${last}`}</h3>
-            <h6>{date}</h6>
-            <p>{email}</p>
-            <p>{email}</p>
-            <InlineEdit value={email} setValue={(e: string) => {
-                updateCard(uuid, 'email', e);
-            }} />
-            <p>{phone}</p>
+            <div>
+                <InlineInputEdit text={first} onFocusOut={e => updateCard(uuid, 'name.first', e)} labelClassName={'inline-h3'} /> <InlineInputEdit text={last} onFocusOut={e => updateCard(uuid, 'name.last', e)} labelClassName={'inline-h3'} />
+            </div>
+            <InlineInputEdit
+                text={date}
+                labelClassName={'inline-p'}
+                onFocusOut={e => updateCard(uuid, 'date', e)} /><br/>
+            <InlineInputEdit
+                labelClassName={'inline-p'}
+                text={email}
+                onFocusOut={e => updateCard(uuid, 'email', e)} /><br/>
+            <InlineInputEdit
+                text={phone}
+                labelClassName={'inline-p'}
+                onFocusOut={e => updateCard(uuid, 'phone', e)}
+            />
             <div className="address-wrapper">
                 <h6 style={{textAlign: 'center'}}>Address</h6>
                 <div className={"address-items"}>
                     <div className={"address-item"}>
-                        <p>Street</p>
-                        <p>{`${street.number} ${street.name}`}</p>
+                        <p>House/App Number</p>
+                        <InlineInputEdit
+                            text={String(street.number)}
+                            onFocusOut={e => updateCard(uuid, 'location.street.number', e)}
+                            labelClassName={'address-item'}
+                        />
+                    </div>
+                    <div className={"address-item"}>
+                        <p>Street Name</p>
+                        <InlineInputEdit
+                            text={street.name}
+                            onFocusOut={e => updateCard(uuid,'location.street.name', e)}
+                            labelClassName={'address-item'}
+                        />
                     </div>
                     <div className={"address-item"}>
                         <p>City</p>
-                        <p>{city}</p>
+                        <InlineInputEdit
+                            text={city}
+                            onFocusOut={e => updateCard(uuid, 'location.city', e)}
+                            labelClassName={'address-item'}
+                        />
                     </div>
                     <div className={"address-item"}>
                         <p>State</p>
-                        <p>{state}</p>
+                        <InlineInputEdit
+                            text={state}
+                            onFocusOut={e => updateCard(uuid, 'location.state', e)}
+                            labelClassName={'address-item'}
+                        />
                     </div>
                     <div className={"address-item"}>
                         <p>Postal Code</p>
-                        <p>{postcode}</p>
+                        <InlineInputEdit
+                            text={String(postcode)}
+                            onFocusOut={e => updateCard(uuid, 'location.postcode', e)}
+                            labelClassName={'address-item'}
+                        />
                     </div>
                     <div className={"address-item"}>
                         <p>Country</p>
-                        <p>{country}</p>
+                        <InlineInputEdit
+                            text={country}
+                            onFocusOut={e => updateCard(uuid, 'location.country', e)}
+                            labelClassName={'address-item'}
+                        />
                     </div>
                 </div>
             </div>
@@ -54,35 +90,42 @@ export const Card = ({
 }
 
 
-// @ts-ignore
-export const InlineEdit = ({ value, setValue }) => {
-    const [editingValue, setEditingValue] = React.useState(value);
-
-    const onChange = (event: { target: { value: any; }; }) => setEditingValue(event.target.value);
-
-    const onKeyDown = (event: { key: string; target: { blur: () => void; }; }) => {
-        if (event.key === "Enter" || event.key === "Escape") {
-            event.target.blur();
-        }
-    };
-
-    const onBlur = (event: { target: { value: string; }; }) => {
-        if (event.target.value.trim() === "") {
-            setEditingValue(value);
-        } else {
-            setValue(event.target.value);
-        }
-    };
-
-    return (
-        <input
-            type="text"
-            aria-label="Field name"
-            value={editingValue}
-            onChange={onChange}
-            // @ts-ignore
-            onKeyDown={onKeyDown}
-            onBlur={onBlur}
-        />
-    );
-};
+// // @ts-ignore
+// export const InlineEdit = ({ value, setValue }) => {
+//     const [editingValue, setEditingValue] = React.useState(value);
+//
+//     useEffect(() => {
+//         // setEditingValue(value);
+//         return () => {
+//             setEditingValue(value);
+//         }
+//     }, [value]);
+//
+//     const onChange = (event: { target: { value: any; }; }) => setEditingValue(event.target.value);
+//
+//     const onKeyDown = (event: { key: string; target: { blur: () => void; }; }) => {
+//         if (event.key === "Enter" || event.key === "Escape") {
+//             event.target.blur();
+//         }
+//     };
+//
+//     const onBlur = (event: { target: { value: string; }; }) => {
+//         if (event.target.value.trim() === "") {
+//             setEditingValue(value);
+//         } else {
+//             setValue(event.target.value);
+//         }
+//     };
+//
+//     return (
+//         <input
+//             type="text"
+//             aria-label="Field name"
+//             value={editingValue}
+//             onChange={onChange}
+//             // @ts-ignore
+//             onKeyDown={onKeyDown}
+//             onBlur={onBlur}
+//         />
+//     );
+// };

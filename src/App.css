@@ -50,6 +50,33 @@ p {
   line-height: 12px;
 }
 
+.inline-h3 {
+  font-size: 1.17em;
+  margin: 10px 0;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.inline-h6 {
+  /*display: block;*/
+  font-size: .67em;
+  /*margin-top: 2.33em;*/
+  /*margin-bottom: 2.33em;*/
+  font-weight: bold;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.inline-p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.inline-h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
 .card-container {
   background-color: #231E39;
   border-radius: 5px;
@@ -73,13 +100,15 @@ p {
   background-color: #1F1A36;
   text-align: left;
   padding: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .address-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-self: center;
+  font-size: 14px;
 }
 
 /*.skills ul {*/

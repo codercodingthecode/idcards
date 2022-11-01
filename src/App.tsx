@@ -17,18 +17,20 @@ function App() {
         return () => {
             getIds().then(res => setIdCards(orderBy(res, sortKey, sortOrder)));
         }
+        // eslint-disable-next-line
     },[])
 
     useEffect(() => {
         const sortedCards = orderBy(idCards, sortKey, sortOrder);
         setIdCards(sortedCards);
+        // eslint-disable-next-line
     }, [sortKey, sortOrder]);
 
 
     const updateCard = (uuid: string, key: string, value: string) => {
         const updatedCards = idCards.find(card => card.login.uuid === uuid);
         if (updatedCards) {
-            const x = key.split('.').reduce((acc, curr, index, arr) => {
+             key.split('.').reduce((acc, curr, index, arr) => {
                 if (index === arr.length - 1) {
                     // @ts-ignore
                     acc[curr] = value;

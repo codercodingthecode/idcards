@@ -1,4 +1,4 @@
-export const API = 'https://randomuser.me/api/?results=5';
+export const API = 'https://randomuser.me/api/?results=12';
 
 export const getIds = async (): Promise<IDCard[]> => {
     const response = await fetch(API)

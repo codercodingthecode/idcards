@@ -20,9 +20,9 @@ export const Card = ({
                 <InlineInputEdit text={first} onFocusOut={e => updateCard(uuid, 'name.first', e)} labelClassName={'inline-h3'} /> <InlineInputEdit text={last} onFocusOut={e => updateCard(uuid, 'name.last', e)} labelClassName={'inline-h3'} />
             </div>
             <InlineInputEdit
-                text={date}
+                text={new Date(date).toLocaleDateString('en-US')}
                 labelClassName={'inline-p'}
-                onFocusOut={e => updateCard(uuid, 'date', e)} /><br/>
+                onFocusOut={e => updateCard(uuid, 'dob.date', e)} /><br/>
             <InlineInputEdit
                 labelClassName={'inline-p'}
                 text={email}

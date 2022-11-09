@@ -29,7 +29,7 @@ export const Header = ({setSearchBy, setSearchTerm, setSortOrder, setSortKey}: H
                     <option value={"location.street.name"}>Sort by Street</option>
                     <option value="location.city">Sort by City</option>
                     <option value="location.state">Sort by State</option>
-                    <option value="location.postalcode">Sort by Postal</option>
+                    <option value="location.postcode">Sort by Postal</option>
                     <option value="location.country">Sort by Country</option>
                 </select>
                 <select onChange={(e) => setSortOrder(e.target.value as 'asc' | 'desc')}>

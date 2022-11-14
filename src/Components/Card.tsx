@@ -14,7 +14,7 @@ export const Card = ({
     updateCard: (uuid: string, key: string, value: string) => void;
 }) => {
     return (
-        <div className="card-container">
+        <div className="card-container some-bananas">
             <img className="round" src={medium} alt="user"/>
             <div>
                 <InlineInputEdit text={first} onFocusOut={e => updateCard(uuid, 'name.first', e)} labelClassName={'inline-h3'} /> <InlineInputEdit text={last} onFocusOut={e => updateCard(uuid, 'name.last', e)} labelClassName={'inline-h3'} />

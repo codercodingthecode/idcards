@@ -26,3 +26,7 @@ yarn-error.log*
 /.idea/modules.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
+/.idea/misc.xml
+/.idea/jpa-buddy.xml
+/.idea/sonarlint/issuestore/index.pb
+/.idea/aws.xml

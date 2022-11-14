@@ -30,3 +30,4 @@ yarn-error.log*
 /.idea/jpa-buddy.xml
 /.idea/sonarlint/issuestore/index.pb
 /.idea/aws.xml
+!/.idea/codestream.xml

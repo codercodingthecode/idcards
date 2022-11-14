@@ -20,7 +20,7 @@ export const Header = ({setSearchBy, setSearchTerm, setSortOrder, setSortKey}: H
                 <input className={"search-input"} type="text" onChange={(e) => setSearchTerm(e.target.value)} placeholder={'Search by'}/>
             </div>
 
-            <div className={"custom-select sort"}>
+          <div className={"custom-select sort"}>
                 <select className={'sortBy'} onChange={(e) => setSortKey(e.target.value as SortableKeys)}>
                     <option value="name.first">Sort by Name</option>
                     <option value="dob.date">Sort by Age</option>

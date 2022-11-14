@@ -24,7 +24,7 @@ export const Header = ({setSearchBy, setSearchTerm, setSortOrder, setSortKey}: H
                 <select className={'sortBy'} onChange={(e) => setSortKey(e.target.value as SortableKeys)}>
                     <option value="name.first">Sort by Name</option>
                     <option value="dob.date">Sort by Age</option>
-                    <option value={"email"}>Sort by Email</option>
+                    <option value={"email"}>Sort by Imail</option>
                     <option value={"phone"}>Sort by Phone</option>
                     <option value={"location.street.name"}>Sort by Street</option>
                     <option value="location.city">Sort by City</option>
